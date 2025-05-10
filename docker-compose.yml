@@ -1,0 +1,30 @@
+version: '3'
+services:
+  #RabbitMQ configuration
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"  # Puerto para el protocolo AMQP
+      - "15672:15672" # Puerto para la interfaz de gestión web
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  #MySQL database for Orders
+  db-pagos:
+    container_name: pagos_container
+    image: mysql:8.0.33
+    restart: always
+    environment:
+      MYSQL_DATABASE: pagosdb
+      MYSQL_USER: pago_user
+      MYSQL_PASSWORD: pago_password
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  rabbitmq_data:
+  mysql_data:
