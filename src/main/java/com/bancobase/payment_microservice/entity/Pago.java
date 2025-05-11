@@ -2,10 +2,8 @@ package com.bancobase.payment_microservice.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-
 
 @Setter
 @Getter
@@ -24,7 +22,7 @@ public class Pago {
     private String concepto;
 
     @ManyToOne
-    @JoinColumn(name = "estatus_pago_id") // Definición de la columna vinculada
+    @JoinColumn(name = "estatus_pago_id")
     private EstatusPago estatusPago;
 
     @ManyToOne
