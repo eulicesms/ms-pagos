@@ -47,4 +47,8 @@ public class Resultado<T> {
         return resultado;
     }
 
+    public boolean isSuccessful() {
+        return this.getEstatus().equals(ResultEstatus.SUCCEEDED);
+    }
+
 }

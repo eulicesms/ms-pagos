@@ -8,11 +8,9 @@ import org.springframework.context.annotation.Configuration;
 
 @OpenAPIDefinition(info = @Info(
         title = "API de Pagos", version = "1.0",
-        description = "Microservicio de Pagos donde puedes guardar el pago que un cliente realiza a otro, también puede " +
-                "obtener el estatus de los pagos realizados, así como actualizar el estatus de los pagos. Al actualizar el estatus" +
-                "de un pago se envia una notificación en RabbitMQ.",
+        description = "Microservicio de Pagos",
         contact = @Contact(
-                name = "Ing. Eulices Martinez Santamaria",
+                name = "Eulices Martinez Santamaria",
                 email = "eulices.santamaria@gmail.com"
         )),
         servers = {

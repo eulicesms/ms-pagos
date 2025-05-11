@@ -3,6 +3,7 @@ package com.bancobase.payment_microservice.dto;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Valid
@@ -14,6 +15,7 @@ import lombok.*;
 public class PagoRequestDto {
 
     @NotNull(message = "El concepto no puede ser nulo")
+    @Size(max = 30)
     private String concepto;
 
     @NotNull(message = "El cliente que realiza el pago no puede ser nulo")

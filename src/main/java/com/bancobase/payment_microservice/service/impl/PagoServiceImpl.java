@@ -11,8 +11,6 @@ import com.bancobase.payment_microservice.repository.EstatusPagoRepository;
 import com.bancobase.payment_microservice.repository.PagosRepository;
 import com.bancobase.payment_microservice.service.PagoService;
 import com.bancobase.payment_microservice.util.EntityToDTO;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -22,7 +20,6 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-@Slf4j
 @Service
 public class PagoServiceImpl implements PagoService {
 
@@ -71,7 +68,6 @@ public class PagoServiceImpl implements PagoService {
     public Resultado<PagoResponseDto> obtenerEstatusPago(long estatusPagoId) {
 
         Optional<Pago> pago = this.pagosRepository.findById(estatusPagoId);
-
         return pago.map(value -> Resultado.successResult(pagoToPagoResponse(value)))
                 .orElseGet(() -> Resultado.failedResult("No existe un pago con el id: " + estatusPagoId));
 
@@ -97,13 +93,12 @@ public class PagoServiceImpl implements PagoService {
         return Resultado.successResult(resultado);
     }
 
-    @RabbitListener(queues = "cola_msj_pagos")
+   /* @RabbitListener(queues = "cola_msj_pagos")
     public void receiveMessage(String message) {
         log.info("Mensaje recibido {}", message);
-    }
+    }*/
 
     private PagoResponseDto pagoToPagoResponse(Pago pago) {
-
         return PagoResponseDto.builder()
                 .id(pago.getId())
                 .concepto(pago.getConcepto())

@@ -35,7 +35,16 @@ public class PoblarTablas implements CommandLineRunner {
                                 Cliente.builder().nombre("Hugo").apellidoPaterno("Perez").apellidoMaterno("Cruz").build(),
                                 Cliente.builder().nombre("Gloria").apellidoPaterno("Valencia").apellidoMaterno("Sanchez").build(),
                                 Cliente.builder().nombre("Fernanda").apellidoPaterno("Hernandez").apellidoMaterno("Mendez").build(),
-                                Cliente.builder().nombre("Tania").apellidoPaterno("Toledo").apellidoMaterno("Vela").build()
+                                Cliente.builder().nombre("Julio").apellidoPaterno("Toledo").apellidoMaterno("Vazquez").build(),
+                                Cliente.builder().nombre("Mauro").apellidoPaterno("Hernandez").apellidoMaterno("Lamin").build(),
+                                Cliente.builder().nombre("Valeria").apellidoPaterno("Ruiz").apellidoMaterno("Vela").build(),
+                                Cliente.builder().nombre("Eduardo").apellidoPaterno("Toledo").apellidoMaterno("Soto").build(),
+                                Cliente.builder().nombre("Larisa").apellidoPaterno("Padilla").apellidoMaterno("Gonzalez").build(),
+                                Cliente.builder().nombre("Karen").apellidoPaterno("Flores").apellidoMaterno("Duarte").build(),
+                                Cliente.builder().nombre("Gerardo").apellidoPaterno("Lamin").apellidoMaterno("Vela").build(),
+                                Cliente.builder().nombre("Sofia").apellidoPaterno("Soto").apellidoMaterno("Toledo").build(),
+                                Cliente.builder().nombre("Fabiola").apellidoPaterno("Toledo").apellidoMaterno("Juarez").build(),
+                                Cliente.builder().nombre("Remedios").apellidoPaterno("Duarte").apellidoMaterno("Morelos").build()
                         )
                 );
             }
